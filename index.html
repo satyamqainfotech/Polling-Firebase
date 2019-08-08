@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Polling App</title>
+</head>
+<body>
+
+    <style>
+        h1 {
+            color: #d5b58a;
+        }
+        .myProgress {
+            width: 100%;
+            background-color: #e8e8e8;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .myBar {
+            width: 0;
+            height: auto;
+            background-color: green;
+        }
+
+        .myProgress h4 {
+            padding: 5px;
+            margin: 0;
+            
+        }
+
+        .labels {
+            padding: 0 5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .percentage {
+            position: absolute;
+            right: 0;
+        }
+
+        .btn-small {
+            background: #ee6e73;
+        }
+    </style>
+    <main id="poll">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Polling</a>
+            </div>
+        </nav>
+            
+                        
+        <div class="row" style="border-bottom: 2px solid hsla(0, 0%, 71%, 0.35);">
+            <div class="col s12 m6">
+                <h1 class="header"> Question </h1>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">What do you prefer for DevLabs Birthday's snack ? </span>
+                    </div>
+                    <div class="card-action">
+                        <a class="waves-effect waves-light btn-small" id="samosa"><i class="material-icons left">add</i> Samosa </a>
+                        <a class="waves-effect waves-light btn-small" id="pakoda"><i class="material-icons left">add</i>Bread Pakoda</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6" style="border-left: 2px solid hsla(0, 0%, 71%, 0.35);">
+                <h1 class="header"> Result </h1>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="myProgress">
+                            <div class="myBar samosa-bar">
+                                <div class="labels">
+                                    <h4 class="title">Samosa</h4>
+                                    <h4 class="percentage" id="samosa-percentage"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myProgress ">
+                            <div class="myBar pakoda-bar">
+                                <div class="labels">
+                                    <h4 class="title">Pakoda</h4>
+                                    <h4 class="percentage"><span id="pakoda-percentage"></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+                apiKey: "AIzaSyC3HR9OABF76-Hd3oFqIrC9Q58lvVcKD3k",
+                authDomain: "polling-app-demo-66929.firebaseapp.com",
+                databaseURL: "https://polling-app-demo-66929.firebaseio.com",
+                projectId: "polling-app-demo-66929",
+                storageBucket: "polling-app-demo-66929.appspot.com",
+                messagingSenderId: "738626157984",
+                appId: "1:738626157984:web:edf0ecf1c27b80fe"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig)
+
+            const db = firebase.firestore()
+    </script>
+    <script src="app.js" />
+</body>
+
+
+</html>
+
+
+
+
